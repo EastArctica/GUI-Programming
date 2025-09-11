@@ -153,6 +153,13 @@ table {
 html,
 body {
     background-color: #eeeeee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+}
+
+div {
+    box-sizing: border-box;
 }
 
 .container {
@@ -162,19 +169,17 @@ body {
 }
 
 .main {
-    width: 60%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding-top: 5px;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
     width: 100%;
     background-color: hsl(155, 34%, 46%);
-    height: 130px;
     display: flex;
     align-content: center;
     justify-content: center;
-    color: #ffffff;
+    color: hsl(140, 22%, 92%);
 }
 
 .header h1 {
@@ -183,10 +188,10 @@ body {
 }
 
 .header span.sub-text {
-    color: #3333333;
+    color: hsl(140, 22%, 92%);
 }
 
-.header > div {
+.header>div {
     padding: 25px;
     text-align: center;
 }
@@ -194,12 +199,95 @@ body {
 .content {
     width: 100%;
     background-color: #ffffff;
-    text-align: center;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
+/* A primary segment within the content section, each of these are considered distinctly different from one another. */
 .content-segment {
-    margin: 10px;
     background-color: #eeeeee;
     border-radius: 5px;
+    padding: 10px 5% 10px 5%;
+    margin-bottom: 10px;
 }
 
+.content-segment h2 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.8em;
+    color: #222222;
+}
+
+.content-segment p {
+    display: block;
+    margin-bottom: 1em;
+}
+
+/* This keeps the top and bottom margins the same within the box. */
+.content-segment:last-child {
+    margin-bottom: 0;
+}
+
+/* Lines primarily under the initial header within each content segment */
+.content-segment hr {
+    border: none;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #333333;
+}
+
+/* Currently only used for the motorcycle table */
+.content-segment table {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid black;
+    border-collapse: separate;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content-segment table th,
+.content-segment table td {
+    border: 1px solid black;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+/* Set a minimum row height for image rows */
+.content-segment table tr td:nth-child(4) {
+    text-align: center;
+    min-width: 230px;
+    min-height: 170px;
+}
+
+/* Make table images fit to their space */
+.content-segment td img {
+    display: block;
+    margin: 0 auto;
+    max-width: 220px;
+    max-height: 160px;
+    width: auto;
+    height: auto;
+}
+
+.content-segment table tr:first-child {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+a,
+a:visited {
+    color: #666666;
+}
+
+.footer {
+    width: 100%;
+    background-color: hsl(155, 34%, 46%);
+    color: hsl(140, 22%, 92%);
+    text-align: center;
+    padding: 18px 0 14px 0;
+    font-size: 1.1em;
+    margin-top: 30px;
+    border-top: 2px solid #333333;
+    letter-spacing: 0.03em;
+}
