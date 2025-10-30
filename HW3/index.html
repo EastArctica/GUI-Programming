@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Multiplication Table Generator</title>
+    <script defer src="./scripts/main.js"></script>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <h1>Welcome to the Multiplication Table Generator</h1>
+    <form id="multiplication-form" action="">
+        <label for="x-start">X start:</label>
+        <input type="number" id="x-start" required placeholder="0" value="0">
+        <br />
+        <label for="x-end">X end:</label>
+        <input type="number" id="x-end" required placeholder="5" value="5">
+        <br />
+        <label for="y-start">Y start:</label>
+        <input type="number" id="y-start" required placeholder="0" value="0">
+        <br />
+        <label for="y-end">Y end:</label>
+        <input type="number" id="y-end" required placeholder="5" value="50">
+        <br />
+
+        <button type="submit">Generate Table</button>
+    </form>
+    <div id="alert-container"></div>
+    <div id="result">
+        <div class="table-container"></div>
+    </div>
+</body>
+
+</html>
