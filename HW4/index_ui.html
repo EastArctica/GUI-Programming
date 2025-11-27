@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Multiplication Table Generator with jQuery UI</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script defer src="./scripts/ui.js"></script>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <h1>Welcome to the Multiplication Table Generator</h1>
+
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Input Parameters</a></li>
+        </ul>
+
+        <div id="tabs-1">
+            <form id="multiplication-form" action="">
+                <div class="input-group">
+                    <label for="x-start">X start:</label>
+                    <input type="number" id="x-start" name="x-start" required placeholder="0" value="0">
+                    <div id="slider-x-start" class="slider"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="x-end">X end:</label>
+                    <input type="number" id="x-end" name="x-end" required placeholder="5" value="5">
+                    <div id="slider-x-end" class="slider"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="y-start">Y start:</label>
+                    <input type="number" id="y-start" name="y-start" required placeholder="0" value="0">
+                    <div id="slider-y-start" class="slider"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="y-end">Y end:</label>
+                    <input type="number" id="y-end" name="y-end" required placeholder="5" value="50">
+                    <div id="slider-y-end" class="slider"></div>
+                </div>
+
+                <button type="submit">Save Table to New Tab</button>
+                <button type="button" id="delete-all-tabs">Delete All Saved Tabs</button>
+                <button type="button" id="delete-selected-tabs">Delete Selected Tabs</button>
+            </form>
+
+            <div id="alert-container"></div>
+
+            <div id="result">
+                <h3>Live Preview</h3>
+                <div class="table-container"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
