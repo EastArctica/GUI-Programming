@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Scrabble One Row</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- jQuery + jQuery UI for simple drag/drop -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/Scrabble_Pieces_AssociativeArray_Jesse.js"></script>
+</head>
+
+<body>
+    <h1>Scrabble One Row</h1>
+
+    <div class="bar">
+        <button id="btnPlay">Play Word</button>
+        <button id="btnNew">New Hand</button>
+        <button id="btnReset">Reset</button>
+        <div class="stats">
+            <div>Round: <b id="roundScore">0</b></div>
+            <div>Total: <b id="totalScore">0</b></div>
+            <div>Tiles left: <b id="tilesLeft">0</b></div>
+        </div>
+    </div>
+
+    <div id="board" class="board" aria-label="Board row"></div>
+    <div id="rack" class="rack" aria-label="Rack"></div>
+
+    <script src="assets/js/game.js"></script>
+</body>
+
+</html>
