@@ -445,7 +445,11 @@ class Game {
     }
 
     refillRack() {
-        this.rack = this.bag.draw(7);
+        const needed = Math.max(0, 7 - this.rack.length);
+        if (needed > 0) {
+            const drawn = this.bag.draw(needed);
+            this.rack.push(...drawn);
+        }
     }
 
     resetGame() {
