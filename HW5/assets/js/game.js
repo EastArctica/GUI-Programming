@@ -298,7 +298,17 @@ class Game {
 
             // Make squares droppable
             $(squareElem).droppable({
-                accept: '.tile',
+                accept: () => {
+                    const xPos = parseInt(squareElem.dataset.x);
+                    const yPos = parseInt(squareElem.dataset.y);
+
+                    // Reject if square already occupied
+                    if (this.board.getTile(xPos, yPos)) return false;
+
+                    // First tile can go anywhere; subsequent tiles must touch an existing one
+                    if (!this.hasAnyTileOnBoard()) return true;
+                    return this.hasAdjacentTile(xPos, yPos);
+                },
                 drop: async (event, ui) => {
                     const x = parseInt(squareElem.dataset.x);
                     const y = parseInt(squareElem.dataset.y);
@@ -399,6 +409,32 @@ class Game {
     isCurrentWordValid() {
         const word = this.getWordFromBoard();
         return word.length >= 2 && this.dictionary.has(word);
+    }
+
+    hasAnyTileOnBoard() {
+        for (const row of this.board.grid) {
+            for (const cell of row) {
+                if (cell.tile) return true;
+            }
+        }
+        return false;
+    }
+    
+    hasAdjacentTile(x, y) {
+        const directions = [
+            [1, 0],
+            [-1, 0],
+            [0, 1],
+            [0, -1],
+        ];
+        for (const [dx, dy] of directions) {
+            const nx = x + dx;
+            const ny = y + dy;
+            if (ny < 0 || ny >= this.board.grid.length) continue;
+            if (nx < 0 || nx >= this.board.grid[0].length) continue;
+            if (this.board.grid[ny][nx].tile) return true;
+        }
+        return false;
     }
     
     async selectBlankLetter() {
