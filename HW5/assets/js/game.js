@@ -1,3 +1,9 @@
+/*
+    Copyright (c) 2025 Jack Manning
+    Author: Jack Manning
+    All rights reserved.
+*/
+
 class DataLoader {
     static cachedPieces = null;
     static async loadPieces() {
