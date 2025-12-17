@@ -9,7 +9,8 @@
 Basic scrabble game with one row. You can drag tiles to make words and it calculates score with bonus squares.
 
 ## GitHub Link
-[Put your github link here]
+[Repository](https://github.com/EastArctica/GUI-Programming/tree/main/HW4)
+GitHub Pages: [Live Demo](https://eastarctica.github.io/GUI-Programming/HW5/)
 
 ## Features that work
 - Random tiles from the bag
